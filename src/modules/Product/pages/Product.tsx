@@ -4,7 +4,7 @@ import ListProduct from "../components/ListProduct";
 import { IProduct } from "../models/Product";
 import { getProducts } from "../services/product.service";
 
-const Product = () => {
+function Product() {
 	const [products, setProduct] = useState<IProduct[]>([]);
 
 	const getProductsResponse = () => {
@@ -21,6 +21,6 @@ const Product = () => {
 			<ListProduct products={products} />
 		</>
 	);
-};
+}
 
 export default Product;
