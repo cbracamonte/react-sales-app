@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { getProducts } from '../services/product.service';
-import { Product } from '../models/Product';
-import ListProduct from '../components/ListProduct';
+import React, { useEffect, useState } from "react";
+
+import ListProduct from "../components/ListProduct";
+import { IProduct } from "../models/Product";
+import { getProducts } from "../services/product.service";
 
 const Product = () => {
-    const [products, setProduct] = useState<Product[]>([]);
+	const [products, setProduct] = useState<IProduct[]>([]);
 
-    useEffect(() => {
-        getProductsResponse();
-      }, []);
+	const getProductsResponse = () => {
+		const response = getProducts();
+		setProduct(response);
+	};
 
-    
-    const getProductsResponse = async () => {
-        const response = await getProducts();
-        setProduct(response);
-      }
+	useEffect(() => {
+		getProductsResponse();
+	}, []);
 
-  return (
-    <>
-      <ListProduct products={products} />
-    </>
-  );
+	return (
+		<>
+			<ListProduct products={products} />
+		</>
+	);
 };
 
 export default Product;

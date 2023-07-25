@@ -1,12 +1,14 @@
-import { Product } from "../models/Product";
+import { IProduct } from "../models/Product";
 import CardProduct from "./CardProduct";
 
-const ListProduct = (products: Product[]) => {
-  return (
-    <>
-        {products.map((item, index) => (<CardProduct key={index} product={item}></CardProduct>))}
-    </>
-  );
+const ListProduct = ({ products }: { products: IProduct[] }) => {
+	return (
+		<>
+			{products.map((item, i) => (
+				<CardProduct key={i} product={item}></CardProduct>
+			))}
+		</>
+	);
 };
 
 export default ListProduct;
