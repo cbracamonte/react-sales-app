@@ -1,4 +1,4 @@
-import { IProduct } from "../models/Product";
+import { IProduct } from "../models/Product.model";
 import CardProduct from "./CardProduct";
 
 const ListProduct = ({ products }: { products: IProduct[] }) => {

@@ -1,4 +1,4 @@
-import { IProduct } from "../models/Product";
+import { IProduct } from "../models/Product.model";
 
 const CardProduct = ({ key, product }: { key: number; product: IProduct }) => {
 	return (

@@ -1,27 +1,20 @@
-import { createBrowserRouter } from "react-router-dom";
-import { RouterProvider } from "react-router";
-import { Layout } from "./shared/components";
-import { Home, Product, Profile } from "./modules";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Layout />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
-			{
-				path: "/profile",
-				element: <Profile />,
-			},
-			{
-				path: "/products",
-				element: <Product />,
-			},
-		],
-	},
-]);
+import { Home, Login, NotFound, Product } from "./modules";
 
-export const App = () => <RouterProvider router={router} />;
+function App() {
+	return (
+		<div>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Login />} />
+					<Route path="*" element={<NotFound />} />
+					<Route path="/home" element={<Home />} />
+					<Route path="/product" element={<Product />} />
+				</Routes>
+			</BrowserRouter>
+		</div>
+	);
+}
+
+export default App;

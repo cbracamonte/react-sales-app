@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import ListProduct from "../components/ListProduct";
-import { IProduct } from "../models/Product";
+import { IProduct } from "../models/Product.model";
 import { getProducts } from "../services/product.service";
 
 function Product() {

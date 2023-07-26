@@ -1,4 +1,4 @@
-import { IProduct } from "../models/Product";
+import { IProduct } from "../models/Product.model";
 
 export const getProducts = (): IProduct[] => {
 	// Lógica para obtener los datos desde una API o cualquier otra fuente
