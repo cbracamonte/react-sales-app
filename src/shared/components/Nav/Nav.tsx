@@ -1,21 +1,27 @@
-import { Link } from "react-router-dom";
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 function Nav() {
 	return (
 		<nav>
 			<ul>
-				<li>
-					<Link to="/">Home</Link>
-				</li>
-				<li>
-					<Link to="/profile">Profile</Link>
-				</li>
-				<li>
-					<Link to="/products">Productos</Link>
-				</li>
+				<CustomLink to="products">Productos</CustomLink>
 			</ul>
 		</nav>
 	);
 }
 
+function CustomLink({ to, children, ...props }: any) {
+	const resolvedPath = useResolvedPath(to);
+	const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+
+	return (
+		<li>
+			<Link to={to} {...props}>
+				{children}
+			</Link>
+		</li>
+	);
+}
 export default Nav;

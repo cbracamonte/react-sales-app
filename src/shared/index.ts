@@ -1,0 +1,10 @@
+export * from "./components";
+export { default as Footer } from "./components/Footer/Footer";
+export { default as Header } from "./components/Header/Header";
+export { default as Layout } from "./components/Layout/Layout";
+export { default as Nav } from "./components/Nav/Nav";
+export { default as RoutesWithNotFound } from "./components/RoutesNotFound/RoutesNotFound";
+export { default as LoginGuard } from "./guards/login.guard";
+export { default as RoleGuard } from "./guards/rol.guard";
+export { default as store } from "./redux/store";
+export * from "./routes/routes";

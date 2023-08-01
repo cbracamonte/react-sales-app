@@ -1,6 +1,6 @@
 import { IProduct } from "../models/Product.model";
 
-const CardProduct = ({ key, product }: { key: number; product: IProduct }) => {
+const CardProduct = ({ product }: { key: number; product: IProduct }) => {
 	return (
 		<section className="card">
 			<header className="card-header">

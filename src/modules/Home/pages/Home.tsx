@@ -1,5 +1,7 @@
+import { Layout } from "../../../shared";
+
 function Home() {
-	return <div className="container">Home</div>;
+	return <Layout />;
 }
 
 export default Home;
